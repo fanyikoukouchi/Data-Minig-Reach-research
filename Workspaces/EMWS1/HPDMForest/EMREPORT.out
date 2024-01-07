@@ -1,0 +1,113 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Fit Statistics
+
+Target=Days_Since_Last_Purchase Target Label=Days Since Last Purchase
+
+   Fit
+Statistics    Statistics Label                Train    Validation      Test
+
+  _ASE_       Average Squared Error            8.34        9.041       8.183
+  _DIV_       Divisor for ASE                139.00      106.000     105.000
+  _MAX_       Maximum Absolute Error           9.50        8.890       8.683
+  _NOBS_      Sum of Frequencies             139.00      106.000     105.000
+  _RASE_      Root Average Squared Error       2.89        3.007       2.861
+  _SSE_       Sum of Squared Errors         1158.71      958.355     859.261
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Assessment Score Rankings
+
+Data Role=TRAIN Target Variable=Days_Since_Last_Purchase Target Label=Days Since Last Purchase
+
+           Number of       Mean        Mean
+Depth    Observations     Target    Predicted
+
+   5           7         57.1429     54.3178 
+  10           8         49.8750     49.5792 
+  15          13         41.5385     40.6092 
+  25           9         41.0000     40.1365 
+  30           5         38.0000     38.3944 
+  35          13         30.0769     29.9714 
+  40           1         22.0000     24.9281 
+  45          10         25.9000     24.6614 
+  50           4         25.0000     24.3347 
+  55           7         22.1429     24.0048 
+  60          10         21.1000     22.6421 
+  65           6         20.8333     21.9996 
+  70           5         17.2000     16.2449 
+  75           7         16.2857     15.8298 
+  80           9         13.3333     14.6303 
+  85           9         12.7778     12.5222 
+  90           4         10.0000     10.6798 
+  95           8         10.2500     10.2491 
+ 100           4          9.2500     10.0449 
+
+
+Data Role=VALIDATE Target Variable=Days_Since_Last_Purchase Target Label=Days Since Last Purchase
+
+           Number of       Mean        Mean
+Depth    Observations     Target    Predicted
+
+   5           8         56.2500     54.2745 
+  10           3         48.6667     48.1137 
+  15           8         39.6250     40.2509 
+  20           9         41.6667     40.1120 
+  30           5         34.2000     38.0873 
+  35           9         27.7778     27.5973 
+  40           2         31.0000     26.3171 
+  45          10         24.6000     24.6794 
+  55           6         20.0000     24.1478 
+  60           4         23.7500     23.3478 
+  65           6         21.5000     22.1494 
+  70           5         19.4000     20.3968 
+  75           6         16.0000     15.7500 
+  80           5         13.0000     14.0403 
+  85           6         12.0000     12.5073 
+  90           4         13.0000     12.4645 
+  95          10          9.9000     10.2193 
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Assessment Score Distribution
+
+Data Role=TRAIN Target Variable=Days_Since_Last_Purchase Target Label=Days Since Last Purchase
+
+   Range for          Mean        Mean        Number of      Model
+   Predicted         Target    Predicted    Observations     Score
+
+52.207 -  54.426    55.5455     54.0415          11         53.3166
+45.550 -  47.769    47.0000     45.6004           4         46.6595
+43.331 -  45.550    48.0000     44.9091           1         44.4404
+38.893 -  41.112    41.0000     40.2019          21         40.0023
+36.674 -  38.893    35.3333     38.1197           9         37.7832
+25.578 -  27.797    29.2222     26.5026           9         26.6879
+23.359 -  25.578    24.2174     24.3817          23         24.4688
+21.140 -  23.359    21.0000     22.3036          15         22.2498
+14.483 -  16.702    16.0625     15.8440          16         15.5926
+12.264 -  14.483    12.7143     13.0644          14         13.3735
+10.045 -  12.264     9.9375     10.3057          16         11.1545
+
+
+Data Role=VALIDATE Target Variable=Days_Since_Last_Purchase Target Label=Days Since Last Purchase
+
+   Range for          Mean        Mean        Number of      Model
+   Predicted         Target    Predicted    Observations     Score
+
+52.063 -  54.275    55.8889     54.2135           9         53.1688
+45.429 -  47.640    47.0000     45.6004           1         46.5343
+43.217 -  45.429    46.0000     45.0151           1         44.3229
+38.794 -  41.006    40.7059     40.1774          17         39.8999
+36.583 -  38.794    34.2000     38.0873           5         37.6884
+34.371 -  36.583    34.0000     36.3546           1         35.4769
+25.525 -  27.737    27.8000     26.4655          10         26.6310
+23.314 -  25.525    22.8889     24.3985          18         24.4196
+21.102 -  23.314    21.8182     22.2540          11         22.2081
+18.891 -  21.102    18.0000     19.7368           1         19.9966
+14.468 -  16.679    16.1429     15.8211           7         15.5736
+12.256 -  14.468    12.6000     13.0069          15         13.3622
+10.045 -  12.256     9.9000     10.2193          10         11.1507

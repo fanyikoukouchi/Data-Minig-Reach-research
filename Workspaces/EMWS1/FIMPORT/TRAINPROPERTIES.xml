@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  Location="CATALOG" Catalog="SASHELP.EMSAMP.Fimport.SOURCE" ImportType="Local" GuessRows="500"
+ Delimiter="," NameRow="Y" SkipRows="0" MaxRows="1000000" MaxCols="10000" FileType="csv"
+ Role="TRAIN" ForceRun="N" Summarize="N" AdvancedAdvisor="Y" RunAction="Train" Component="FileImport"
+ IFileName="C:\Users\Administrator\Desktop\archive\E-commerce Customer Behavior - Sheet1.csv"
+ AccessTable="NoTableName" UserID="NoUserID" Password="NoPassword" RawCreateTime="2020211130.5"
+ CreateTime="07JAN2024:01:45:31" RunId="ac624514-ab80-4031-bfbe-7375d7c7724b" RawLastTimeRun="2020264993.2"
+ RawRunTime="2.7239999771" LastTimeRun="07JAN2024:16:43:13" RunTime="0 Hr. 0 Min. 2.72 Sec."
+>
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES ><![CDATA[
+USERTRAINCODE
+USERSCORECODE
+USERREPORTCODE
+VARIABLESETDELTA
+DELTACODE
+]]>
+</FILEPROPERTIES></_ROOT_>

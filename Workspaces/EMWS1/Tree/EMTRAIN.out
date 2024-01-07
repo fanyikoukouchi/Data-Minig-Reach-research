@@ -1,0 +1,25 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+Role         Level         Count
+
+ASSESS     NOMINAL           1    
+ID         INTERVAL          1    
+INPUT      INTERVAL          1    
+INPUT      NOMINAL           4    
+TARGET     INTERVAL          1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Predicted and decision variables
+
+Type         Variable        Label
+
+TARGET        Age                      
+PREDICTED     P_Age      Predicted: Age
+RESIDUAL      R_Age      Residual: Age 

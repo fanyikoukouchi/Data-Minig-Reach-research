@@ -1,0 +1,207 @@
+*------------------------------------------------------------*
+User:                Administrator
+Date:                2024年01月07日
+Time:                18时35分22秒
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+Role         Level         Count
+ 
+ID         INTERVAL          1
+INPUT      BINARY            1
+INPUT      INTERVAL          3
+INPUT      NOMINAL           4
+TARGET     BINARY            1
+TARGET     INTERVAL          1
+ 
+ 
+ 
+Variable Levels Summary
+(maximum 500 observations printed)
+ 
+                              Frequency
+    Variable        Role        Count
+ 
+Customer_ID         ID           350
+Discount_Applied    TARGET         2
+ 
+ 
+ 
+Class Variable Summary Statistics
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN
+ 
+                                         Number
+Data                                       of                                   Mode                        Mode2
+Role     Variable Name          Role     Levels    Missing    Mode           Percentage    Mode2          Percentage
+ 
+TRAIN    City                  INPUT        6         0       Los Angeles      16.86       New York         16.86
+TRAIN    Gender                INPUT        2         0       Female           50.00       Male             50.00
+TRAIN    Membership_Type       INPUT        3         0       Gold             33.43       Silver           33.43
+TRAIN    Satisfaction_Level    INPUT        4         2       Satisfied        35.71       Unsatisfied      33.14
+TRAIN    Discount_Applied      TARGET       2         0       FALSE            50.00       TRUE             50.00
+ 
+ 
+ 
+Distribution of Class Target and Segment Variables
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN
+ 
+Data                                             Frequency
+Role      Variable Name       Role     Level         Count    Percent
+ 
+TRAIN    Discount_Applied    TARGET    FALSE           175       50
+TRAIN    Discount_Applied    TARGET    TRUE            175       50
+ 
+ 
+ 
+Interval Variable Summary Statistics
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN
+ 
+                                                  Standard          Non
+Variable                     Role         Mean    Deviation     Missing     Missing     Minimum      Median     Maximum    Skewness    Kurtosis
+ 
+Age                         INPUT     33.59714    4.870882          350           0          26          32          43     0.46834    -0.77278
+Average_Rating              INPUT     4.019143    0.580539          350           0           3         4.1         4.9    -0.12682    -1.21098
+Total_Spend                 INPUT     845.3817    362.0587          350           0       410.8       770.2      1520.1    0.562567    -1.07986
+Days_Since_Last_Purchase    TARGET    26.58857    13.44081          350           0           9          23          63    0.677545     -0.5054
+ 
+ 
+ 
+Class Variable Summary Statistics by Class Target
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN Variable Name=City
+ 
+                              Number
+                    Target      of                                   Mode                     Mode2
+Target              Level     Levels    Missing       Mode        Percentage     Mode2      Percentage
+ 
+Discount_Applied    FALSE        3         0       Los Angeles      33.71       Houston       33.14
+Discount_Applied    TRUE         3         0       New York         33.71       Chicago       33.14
+_OVERALL_                        6         0       Los Angeles      16.86       New York      16.86
+ 
+ 
+Data Role=TRAIN Variable Name=Gender
+ 
+                              Number
+                    Target      of                              Mode                   Mode2
+Target              Level     Levels    Missing     Mode     Percentage    Mode2     Percentage
+ 
+Discount_Applied    FALSE        2         0       Male        66.86       Female      33.14
+Discount_Applied    TRUE         2         0       Female      66.86       Male        33.14
+_OVERALL_                        2         0       Female      50.00       Male        50.00
+ 
+ 
+Data Role=TRAIN Variable Name=Membership_Type
+ 
+                              Number
+                    Target      of                              Mode                   Mode2
+Target              Level     Levels    Missing     Mode     Percentage    Mode2     Percentage
+ 
+Discount_Applied    FALSE        3         0       Silver      33.71       Bronze      33.14
+Discount_Applied    TRUE         3         0       Gold        33.71       Bronze      33.14
+_OVERALL_                        3         0       Gold        33.43       Silver      33.43
+ 
+ 
+Data Role=TRAIN Variable Name=Satisfaction_Level
+ 
+                              Number
+                    Target      of                                   Mode                        Mode2
+Target              Level     Levels    Missing    Mode           Percentage       Mode2       Percentage
+ 
+Discount_Applied    FALSE        3         2       Neutral          61.14       Satisfied        37.71
+Discount_Applied    TRUE         2         0       Unsatisfied      66.29       Satisfied        33.71
+_OVERALL_                        4         2       Satisfied        35.71       Unsatisfied      33.14
+ 
+ 
+ 
+Interval Variable Summary Statistics by Class Target
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN Variable=Age
+ 
+                    Target                                 Non                                        Standard
+Target              Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role     Label
+ 
+Discount_Applied    FALSE           34           0         175          27          38       33.32      3.3357     -0.42986    -1.27063    INPUT     Age
+Discount_Applied    TRUE            32           0         175          26          43    33.87429    6.025441      0.47524    -1.37654    INPUT     Age
+_OVERALL_                           32           0         350          26          43    33.59714    4.870882      0.46834    -0.77278    INPUT     Age
+ 
+ 
+Data Role=TRAIN Variable=Average_Rating
+ 
+                    Target                                 Non                                        Standard
+Target              Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role         Label
+ 
+Discount_Applied    FALSE          4.2           0         175           3         4.9    4.058857    0.675957     -0.28657    -1.37984    INPUT    Average Rating
+Discount_Applied    TRUE           3.9           0         175         3.3         4.8    3.979429    0.464646     0.093761    -1.31814    INPUT    Average Rating
+_OVERALL_                          4.1           0         350           3         4.9    4.019143    0.580539     -0.12682    -1.21098    INPUT    Average Rating
+ 
+ 
+Data Role=TRAIN Variable=Days_Since_Last_Purchase
+ 
+                    Target                                 Non                                        Standard
+Target              Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis     Role              Label
+ 
+Discount_Applied    FALSE           15           0         175           9          32    16.39429    5.425458     0.657648    -0.38132    TARGET    Days Since Last Purchase
+Discount_Applied    TRUE            38           0         175          18          63    36.78286    11.12979     0.212048    -0.68605    TARGET    Days Since Last Purchase
+_OVERALL_                           23           0         350           9          63    26.58857    13.44081     0.677545     -0.5054    TARGET    Days Since Last Purchase
+ 
+ 
+Data Role=TRAIN Variable=Total_Spend
+ 
+                    Target                                 Non                                        Standard
+Target              Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role        Label
+ 
+Discount_Applied    FALSE        800.9           0         175       410.8      1520.1    903.4897    420.3398     0.355572    -1.47437    INPUT    Total Spend
+Discount_Applied    TRUE         690.6           0         175      475.25      1210.6    787.2737    281.8668     0.460333    -1.50663    INPUT    Total Spend
+_OVERALL_                        770.2           0         350       410.8      1520.1    845.3817    362.0587     0.562567    -1.07986    INPUT    Total Spend
+ 
+ 
+ 
+Correlation Statistics
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN Type=PEARSON Target=Days_Since_Last_Purchase
+ 
+Input             Correlation
+ 
+Age                  0.16876
+Average_Rating      -0.43076
+Total_Spend         -0.54009
+ 
+ 
+ 
+Chi-Square Statistics
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN Target=Discount_Applied
+ 
+Input                 Chi-Square    Df      Prob
+ 
+City                    350.0000     5    <.0001
+Satisfaction_Level      225.3920     3    <.0001
+Gender                   39.7829     1    <.0001
+Membership_Type           0.0171     2    0.9915
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*

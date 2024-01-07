@@ -1,0 +1,76 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Summary Statistics for Class Targets
+
+Data=DATA
+
+                    Numeric    Formatted    Frequency
+    Variable         Value       Value        Count      Percent         Label
+
+Discount_Applied       .         FALSE         175          50      Discount Applied
+Discount_Applied       .         TRUE          175          50      Discount Applied
+
+
+Data=TEST
+
+                    Numeric    Formatted    Frequency
+    Variable         Value       Value        Count      Percent         Label
+
+Discount_Applied       .         FALSE          53       50.4762    Discount Applied
+Discount_Applied       .         TRUE           52       49.5238    Discount Applied
+
+
+Data=TRAIN
+
+                    Numeric    Formatted    Frequency
+    Variable         Value       Value        Count      Percent         Label
+
+Discount_Applied       .         FALSE          69       49.6403    Discount Applied
+Discount_Applied       .         TRUE           70       50.3597    Discount Applied
+
+
+Data=VALIDATE
+
+                    Numeric    Formatted    Frequency
+    Variable         Value       Value        Count      Percent         Label
+
+Discount_Applied       .         FALSE          53          50      Discount Applied
+Discount_Applied       .         TRUE           53          50      Discount Applied
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Summary Statistics for Interval Targets
+
+Data=DATA
+
+                                                               Number of                 Standard
+        Variable            Maximum      Mean     Minimum    Observations    Missing    Deviation             Label
+
+Days_Since_Last_Purchase       63      26.5886       9            350           0        13.4408     Days Since Last Purchase
+
+
+Data=TEST
+
+                                                            Number of                 Standard
+        Variable            Maximum    Mean    Minimum    Observations    Missing    Deviation             Label
+
+Days_Since_Last_Purchase       58      25.8       9            105           0        12.3556     Days Since Last Purchase
+
+
+Data=TRAIN
+
+                                                               Number of                 Standard
+        Variable            Maximum      Mean     Minimum    Observations    Missing    Deviation             Label
+
+Days_Since_Last_Purchase       62      27.0144       9            139           0        13.9741     Days Since Last Purchase
+
+
+Data=VALIDATE
+
+                                                               Number of                 Standard
+        Variable            Maximum      Mean     Minimum    Observations    Missing    Deviation             Label
+
+Days_Since_Last_Purchase       63      26.8113       9            106           0        13.8455     Days Since Last Purchase

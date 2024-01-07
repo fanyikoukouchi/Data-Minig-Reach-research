@@ -1,0 +1,63 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+Role         Level         Count
+
+ID         INTERVAL          1    
+INPUT      BINARY            1    
+INPUT      INTERVAL          3    
+INPUT      NOMINAL           4    
+TARGET     BINARY            1    
+TARGET     INTERVAL          1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The CONTENTS Procedure
+
+Data Set Name        EMWS1.FIMPORT_DATA                  Observations          350
+Member Type          DATA                                Variables             11 
+Engine               V9                                  Indexes               0  
+Created              07/01/2024 16:43:15                 Observation Length    96 
+Last Modified        07/01/2024 16:43:15                 Deleted Observations  0  
+Protection                                               Compressed            NO 
+Data Set Type                                            Sorted                NO 
+Label                                                                             
+Data Representation  WINDOWS_64                                                   
+Encoding             euc-cn  Simplified Chinese (EUC)                             
+
+
+                                       Engine/Host Dependent Information
+
+Data Set Page Size          65536                                                                               
+Number of Data Set Pages    1                                                                                   
+First Data Page             1                                                                                   
+Max Obs per Page            681                                                                                 
+Obs in First Data Page      350                                                                                 
+Number of Data Set Repairs  0                                                                                   
+ExtendObsCounter            YES                                                                                 
+Filename                    C:\Users\Administrator\Desktop\NewProjectExam\Workspaces\EMWS1\fimport_data.sas7bdat
+Release Created             9.0401M3                                                                            
+Host Created                X64_8PRO                                                                            
+
+
+                           Alphabetic List of Variables and Attributes
+ 
+ #    Variable                    Type    Len    Format     Informat    Label
+
+ 2    Age                         Num       8    BEST12.    BEST32.                             
+ 8    Average_Rating              Num       8                           Average Rating          
+ 3    City                        Char     13    $13.       $13.                                
+ 4    Customer_ID                 Num       8                           Customer ID             
+10    Days_Since_Last_Purchase    Num       8                           Days Since Last Purchase
+ 9    Discount_Applied            Char      5                           Discount Applied        
+ 1    Gender                      Char      6    $6.        $6.                                 
+ 7    Items_Purchased             Num       8                           Items Purchased         
+ 5    Membership_Type             Char      6                           Membership Type         
+11    Satisfaction_Level          Char     11                           Satisfaction Level      
+ 6    Total_Spend                 Num       8                           Total Spend             

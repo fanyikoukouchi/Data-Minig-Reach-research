@@ -1,0 +1,12 @@
+if ROLE in('INPUT', 'REJECTED') then do;
+if upcase(NAME) in(
+'AGE'
+'AVERAGE_RATING'
+'CITY'
+'GENDER'
+'MEMBERSHIP_TYPE'
+'SATISFACTION_LEVEL'
+'TOTAL_SPEND'
+) then ROLE='INPUT';
+else delete;
+end;

@@ -1,0 +1,132 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+The HP4SCORE Procedure
+
+      Performance Information
+
+Execution Mode       Single-Machine
+Number of Threads    1             
+
+
+             Data Access Information
+ 
+Data                Engine    Role      Path
+
+WORK._SCORETRAIN    V9        Input     On Client
+WORK._OUTTEMP       V9        Output    On Client
+
+
+          Number of Observations
+ 
+Type                                      N
+
+Number of Observations Read             139
+Number of Observations Used             139
+Sum of Frequencies Used                 139
+
+
+        Procedure Task Timing
+ 
+Task              Seconds     Percent
+
+Scoring Data         0.00     100.0% 
+ 
+                                                                                                                                                                                                                                                                
+ 
+The HP4SCORE Procedure
+
+      Performance Information
+
+Execution Mode       Single-Machine
+Number of Threads    1             
+
+
+                Data Access Information
+ 
+Data                      Engine    Role      Path
+
+EMWS1.HPDMFOREST_TRAIN    V9        Input     On Client
+WORK._OUTTEMP             V9        Output    On Client
+
+
+          Number of Observations
+ 
+Type                                      N
+
+Number of Observations Read             139
+Number of Observations Used             139
+Sum of Frequencies Used                 139
+
+
+        Procedure Task Timing
+ 
+Task              Seconds     Percent
+
+Scoring Data         0.01     100.0% 
+ 
+                                                                                                                                                                                                                                                                
+ 
+The HP4SCORE Procedure
+
+      Performance Information
+
+Execution Mode       Single-Machine
+Number of Threads    1             
+
+
+                 Data Access Information
+ 
+Data                         Engine    Role      Path
+
+EMWS1.HPDMFOREST_VALIDATE    V9        Input     On Client
+WORK._OUTTEMP                V9        Output    On Client
+
+
+          Number of Observations
+ 
+Type                                      N
+
+Number of Observations Read             106
+Number of Observations Used             106
+Sum of Frequencies Used                 106
+
+
+        Procedure Task Timing
+ 
+Task              Seconds     Percent
+
+Scoring Data         0.00     100.0% 
+ 
+                                                                                                                                                                                                                                                                
+ 
+The HP4SCORE Procedure
+
+      Performance Information
+
+Execution Mode       Single-Machine
+Number of Threads    1             
+
+
+               Data Access Information
+ 
+Data                     Engine    Role      Path
+
+EMWS1.HPDMFOREST_TEST    V9        Input     On Client
+WORK._OUTTEMP            V9        Output    On Client
+
+
+          Number of Observations
+ 
+Type                                      N
+
+Number of Observations Read             105
+Number of Observations Used             105
+Sum of Frequencies Used                 105
+
+
+        Procedure Task Timing
+ 
+Task              Seconds     Percent
+
+Scoring Data         0.01     100.0% 

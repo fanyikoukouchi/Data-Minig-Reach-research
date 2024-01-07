@@ -1,0 +1,81 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+ Role        Level         Count
+
+TARGET     INTERVAL          1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+
+
+
+
+
+
+Fit Statistics
+Model Selection based on Valid: Average Squared Error (_VASE_)
+
+                                            Valid:     Train:
+                                           Average    Average
+Selected                      Model        Squared    Squared
+ Model      Model Node     Description      Error      Error
+
+            Tree          Decision Tree     .         0.40307
+   Y        HPDMForest    HP Forest        0.23561    0.22075
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+
+
+
+
+
+
+Fit Statistics Table
+Target: Age
+
+Data Role=Train
+
+Statistics                                              Tree    HPDMForest
+
+Train: Average Squared Error                           0.403        0.221 
+Selection Criterion: Valid: Average Squared Error       .           0.236 
+Train: Total Degrees of Freedom                      350.000         .    
+Train: Divisor for ASE                               350.000      140.000 
+Train: Maximum Absolute Error                          6.654        1.482 
+Train: Sum of Frequencies                            350.000      140.000 
+Train: Root Average Squared Error                      0.635        0.470 
+Train: Sum of Squared Errors                         141.075       30.905 
+
+
+Data Role=Valid
+
+Statistics                           Tree    HPDMForest
+
+Valid: Average Squared Error           .         0.236 
+Valid: Divisor for ASE                 .       105.000 
+Valid: Maximum Absolute Error          .         1.657 
+Valid: Sum of Frequencies              .       105.000 
+Valid: Root Average Squared Error      .         0.485 
+Valid: Sum of Squared Errors           .        24.739 
+
+
+Data Role=Test
+
+Statistics                          Tree    HPDMForest
+
+Test: Average Squared Error           .         1.207 
+Test: Divisor for ASE                 .       105.000 
+Test: Maximum Absolute Error          .         6.989 
+Test: Sum of Frequencies              .       105.000 
+Test: Root Average Squared Error      .         1.099 
+Test: Sum of Squared Errors           .       126.770 

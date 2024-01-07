@@ -1,0 +1,250 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+Role         Level         Count
+
+ID         INTERVAL          2    
+INPUT      BINARY            1    
+INPUT      INTERVAL          3    
+INPUT      NOMINAL           4    
+TARGET     BINARY            1    
+TARGET     INTERVAL          1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Predicted and decision variables
+
+Type                  Variable                            Label
+
+TARGET       Days_Since_Last_Purchase      Days Since Last Purchase           
+PREDICTED    P_Days_Since_Last_Purchase    Predicted: Days_Since_Last_Purchase
+RESIDUAL     R_Days_Since_Last_Purchase    Residual: Days_Since_Last_Purchase 
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The HPFOREST Procedure
+
+      Performance Information
+
+Execution Mode       Single-Machine
+Number of Threads    4             
+
+
+                 Data Access Information
+ 
+Data                         Engine    Role     Path
+
+WORK.HPDMFOREST_TRAINDATA    V9        Input    On Client
+
+
+                   Model Information
+ 
+Parameter                          Value
+
+Variables to Try                       3    (Default)  
+Maximum Trees                        100               
+Inbag Fraction                       0.6               
+Prune Fraction                         0    (Default)  
+Prune Threshold                      0.1    (Default)  
+Leaf Fraction                    0.00001    (Default)  
+Leaf Size Setting                      1    (Default)  
+Leaf Size Used                         1               
+Category Bins                         30               
+Interval Bins                        100               
+Minimum Category Size                  5               
+Node Size                         100000    (Default)  
+Maximum Depth                         50               
+Alpha                               0.05               
+Exhaustive                          5000               
+Rows of Sequence to Skip               5    (Default)  
+Split Criterion                        .    Variance   
+Preselection Method                    .    Loh        
+Missing Value Handling                 .    Valid value
+
+
+                          Number of Observations
+ 
+Type                                 NTrain          NValid          NTotal
+
+Number of Observations Read             139             106             245
+Number of Observations Used             139             106             245
+
+
+              Baseline Fit Statistics
+ 
+Statistic                      Value      Validation
+
+Average Square Error         193.870         189.889
+
+
+                     Fit Statistics
+ 
+                           Average    Average    Average
+                            Square     Square     Square
+   Number        Number      Error      Error      Error
+ of Trees     of Leaves    (Train)      (OOB)    (Valid)
+
+        1            12    10.7942    10.9653    12.7833
+        2            23     7.9565    10.7186     9.9625
+        3            35     7.5027     9.9381     9.3020
+        4            48     7.2519    11.1265     8.8636
+        5            58     7.2754    11.1500     8.5872
+        6            69     7.4058    12.6915     8.6095
+        7            78     7.4362    12.0704     8.5730
+        8            87     7.6030    11.9389     8.6779
+        9            97     7.5732    11.7642     8.6504
+       10           108     7.6705    11.5847     8.7497
+       11           116     7.5484    11.1964     8.5011
+       12           123     8.0202    12.2756     9.0858
+       13           132     7.9059    12.0435     8.9340
+       14           142     7.9130    11.8662     8.9927
+       15           150     8.0305    11.6716     9.0093
+       16           158     8.0831    11.8108     8.9529
+       17           166     8.2379    11.7158     9.0221
+       18           178     8.0886    11.5212     9.0659
+       19           183     8.3900    12.4807     9.3256
+       20           194     8.3817    12.3011     9.3286
+       21           201     8.4273    12.2256     9.4265
+       22           209     8.9520    13.7196     9.8324
+       23           220     8.9344    13.5276     9.8606
+       24           229     8.9128    13.3899     9.8130
+       25           236     8.8363    13.3065     9.7256
+       26           246     8.7389    12.9534     9.6666
+       27           255     8.6030    12.4924     9.5266
+       28           265     8.6995    12.4767     9.5723
+       29           272     8.6829    12.2565     9.5730
+       30           286     8.5847    12.1962     9.5065
+       31           298     8.4678    12.0930     9.3947
+       32           311     8.4127    11.9375     9.3203
+       33           319     8.3143    11.7633     9.2437
+       34           332     8.2957    11.8067     9.2292
+       35           342     8.2597    11.6178     9.1662
+       36           349     8.3255    11.6360     9.2097
+       37           359     8.3229    11.6270     9.1697
+       38           372     8.2798    11.6122     9.1257
+       39           385     8.1294    11.3807     8.9700
+       40           392     8.1665    11.3655     9.0257
+       41           405     8.1014    11.1405     8.9650
+       42           415     8.0428    11.0190     8.9269
+       43           422     8.0328    10.9087     8.8892
+       44           435     7.9828    10.8316     8.8029
+       45           440     8.0371    10.8905     8.8455
+       46           446     8.2069    11.3548     9.0192
+       47           456     8.2253    11.2952     9.0443
+       48           466     8.2672    11.3596     9.0603
+       49           475     8.3110    11.3821     9.0817
+       50           483     8.3583    11.4293     9.1114
+       51           493     8.3476    11.3100     9.1290
+       52           502     8.3481    11.3419     9.1629
+       53           513     8.3956    11.3614     9.1970
+       54           524     8.3886    11.2566     9.1749
+       55           533     8.3961    11.1929     9.1785
+       56           544     8.4175    11.2208     9.2052
+       57           556     8.4241    11.2081     9.2203
+       58           561     8.4822    11.2315     9.2607
+       59           568     8.5082    11.2272     9.2787
+       60           581     8.6506    11.6092     9.4476
+       61           590     8.6110    11.4304     9.4062
+       62           600     8.5857    11.3093     9.3394
+       63           609     8.5797    11.2488     9.3606
+       64           619     8.5815    11.2784     9.3322
+       65           630     8.5534    11.1930     9.3210
+       66           637     8.5671    11.1736     9.3501
+       67           651     8.4867    11.0847     9.2872
+       68           658     8.5270    11.1362     9.3018
+       69           668     8.5620    11.2785     9.3689
+       70           679     8.5399    11.2725     9.3188
+       71           691     8.5283    11.2316     9.3035
+       72           705     8.4582    11.1115     9.2417
+       73           712     8.4811    11.1750     9.2478
+       74           720     8.3971    11.0436     9.1519
+       75           733     8.3319    10.9160     9.0810
+       76           744     8.3108    10.8785     9.0762
+       77           755     8.3181    10.8816     9.0871
+       78           765     8.3483    11.0092     9.1039
+       79           775     8.3158    10.9741     9.0577
+       80           784     8.3389    10.9921     9.0704
+       81           793     8.3722    10.9854     9.0861
+       82           802     8.3348    10.9174     9.0524
+       83           810     8.3376    10.8888     9.0438
+       84           820     8.3191    10.8247     9.0253
+       85           833     8.3064    10.8149     9.0167
+       86           847     8.2732    10.7766     8.9684
+       87           857     8.2395    10.7438     8.9386
+       88           867     8.2415    10.7340     8.9504
+       89           879     8.2422    10.7414     8.9409
+       90           891     8.2309    10.7283     8.9293
+       91           900     8.2245    10.6922     8.9223
+       92           909     8.2410    10.6765     8.9504
+       93           916     8.2635    10.7161     8.9557
+       94           928     8.2929    10.8283     8.9980
+       95           936     8.2992    10.8274     9.0085
+       96           948     8.2826    10.7710     9.0030
+       97           957     8.2738    10.7709     8.9805
+       98           967     8.2976    10.7758     8.9954
+       99           975     8.3518    10.8600     9.0515
+      100           987     8.3360    10.8512     9.0411
+
+
+                                        Loss Reduction Variable Importance
+ 
+                                                                                                             Valid
+                        Number                     OOB       Valid        Absolute    OOB Absolute        Absolute
+Variable              of Rules         MSE         MSE         MSE           Error           Error           Error
+
+City                       111    66.15704    68.30739    64.41741        3.134106        3.225989        2.983796
+Satisfaction_Level          64    59.08656    58.06947    57.45862        2.444100        2.366328        2.220375
+Age                        180    22.46542    20.78285    21.70221        1.186304        1.101792        1.119508
+Gender                      56     8.31683     7.50724     7.80247        0.702002        0.651030        0.730628
+Average_Rating             153     8.34066     7.14678     7.82298        0.529363        0.423685        0.456984
+Items_Purchased             99    11.54280     7.12859     9.07534        0.764903        0.479227        0.578653
+Total_Spend                158     4.37977     3.87607     4.09611        0.417118        0.358913        0.396056
+Membership_Type             66     2.57567     3.22126     2.70560        0.240820        0.238646        0.200704
+
+
+         Procedure Task Timing
+ 
+Task                 Seconds     Percent
+
+Reading Data            0.01      9.09% 
+Training Forest         0.09     90.91% 
+Saving Model            0.00      0.00% 
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+            Key Information
+
+3F8CE54CD6BA44C16BC5B2D1C3C83521FBD7CBF0
+
+
+         Basic Information
+
+Procedure Name    hpforest          
+Timestamp         07Jan2024:16:43:21
+
+
+                         Input variables
+
+Age                              8    Input             Numeric  
+Average_Rating                   8    Input             Numeric  
+Total_Spend                      8    Input             Numeric  
+Gender                           6    Input    Class    Character
+City                            13    Input    Class    Character
+Items_Purchased                  8    Input    Class    Numeric  
+Membership_Type                  6    Input    Class    Character
+Satisfaction_Level              11    Input    Class    Character
+
+
+                                       Output variables
+
+P_Days_Since_Last_Purchase               8    Numeric      Predicted: Days_Since_Last_Purchase
+_WARN_                                   4    Character    Warnings                           

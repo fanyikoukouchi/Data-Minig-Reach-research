@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  WorkspaceName="EMWS1" UUID="" EMVersion="14.1" ScoreCodeType="Data Step" MiningFunction="Prediction"
+ MiningAlgorithm="DecisionTree" MiningAlgorithmNode="Tree" NodeAlgorithm="DecisionTree"
+ NodeId="Tree" NodeDescription="Decision Tree" Time="07JAN2024:14:31:46" RawLastTimeRun=""
+ LastTimeRun="" Userid="Administrator" NTarget="1" NSegment="0">
+<TARGETS >
+<TARGET  Variable="Customer_ID" Level="INTERVAL" Type="N" Format="" Order="" NodeId="Tree"
+/>
+</TARGETS>
+</_ROOT_>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  NumberOfReportedLevels="1E-6" NormalizeReportingVariables="Y" DecileBin="20" LiftEpsilon="1E-6"
+ ProfitEpsilon="1E-6" RoiEpsilon="1E-6" ScoreDistBin="20" RocChart="Y" RocEpsilon="0.01"
+ AssessAllTargetLevels="N" SelectionData="DEFAULT" HPCriteria="DEFAULT" SelectionTable="TRAIN"
+ SelectionCriteria="DEFAULT" SelectionDepth="10" NumberofBins="20" RecomputeAssess="N"
+ TargetName="Age" ModelId="HPDMForest" ModelDescription="HP Forest" ModelCriteria="Valid: Average Squared Error"
+ ForceRun="N" RunAction="Train" Component="ModelCompare" RawCreateTime="2020264538.4"
+ CreateTime="07JAN2024:16:35:38" RunId="fb44b7f4-7a39-4cd9-bb74-49f7cc41c40c" StatisticUsed="_VASE_"
+ TargetLabel="" RawLastTimeRun="2020264575" RawRunTime="3.2060000896" LastTimeRun="07JAN2024:16:36:15"
+ RunTime="0 Hr. 0 Min. 3.21 Sec.">
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

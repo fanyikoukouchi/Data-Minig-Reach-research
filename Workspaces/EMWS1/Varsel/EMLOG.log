@@ -1,0 +1,447 @@
+*------------------------------------------------------------*
+User:                Administrator
+Date:                2024年01月07日
+Time:                16时36分09秒
+Site:                11203366
+Platform:            X64_8PRO
+Maintenance Release: 9.04.01M3P062415
+EM Version:          14.1
+* 
+*------------------------------------------------------------*
+* Training Log
+Date:                2024年01月07日
+Time:                16时36分08秒
+*------------------------------------------------------------*
+10865  proc freq data=EMWS1.Varsel_VariableSet noprint;
+10866  table ROLE*LEVEL/out=WORK.VarselMETA;
+10867  run;
+ 
+NOTE: There were 10 observations read from the data set EMWS1.VARSEL_VARIABLESET.
+NOTE: The data set WORK.VARSELMETA has 4 observations and 4 variables.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+ 
+ 
+10868  proc print data=WORK.VarselMETA label noobs;
+10869  var ROLE LEVEL COUNT;
+10870  label ROLE = "%sysfunc(sasmsg(sashelp.dmine, meta_role_vlabel, NOQUOTE))" LEVEL = "%sysfunc(sasmsg(sashelp.dmine, meta_level_vlabel, NOQUOTE))" COUNT = "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel, NOQUOTE))";
+10871  title9 ' ';
+10872  title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_varSummary_title  , NOQUOTE))";
+10873  run;
+ 
+NOTE: There were 4 observations read from the data set WORK.VARSELMETA.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+10874  title10;
+ 
+10875  data WORK.M2W4_BVY;
+10876  set WORK.M2W4_BVY;
+10877  if role = 'TARGET' and use = 'Y' then do;
+10878  role = 'TARGET';
+10879  output;
+10880  end;
+10881  if role = 'INPUT' and use in ('Y','D','N') then do;
+10882  role = 'INPUT';
+10883  output;
+10884  end;
+10885  if role = 'REJECTED' and use = 'Y' then do;
+10886  role = 'INPUT';
+10887  output;
+10888  end;
+10889  if role = 'FREQ' and use in ('Y', 'D') then do;
+10890  role = 'FREQ';
+10891  output;
+10892  end;
+10893  if role = 'REJECTED' and use in ('N', 'D') then do;
+10894  role = 'REJECTED';
+10895  output;
+10896  end;
+10897  run;
+ 
+NOTE: There were 10 observations read from the data set WORK.M2W4_BVY.
+NOTE: The data set WORK.M2W4_BVY has 10 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+10898  /*by pass cmeta */
+10899  data WORK.M2W4_BVY;
+10900  set WORK.M2W4_BVY;
+10901  run;
+ 
+NOTE: There were 10 observations read from the data set WORK.M2W4_BVY.
+NOTE: The data set WORK.M2W4_BVY has 10 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+10902  data WORK.M1X39VV1;
+10903  set WORK.M1X39VV1;
+10904  if role = 'INPUT' and use in ('N') then delete;
+10905  if role = 'REJECTED' and use in ('N', 'D') then delete;
+10906  run;
+ 
+NOTE: There were 10 observations read from the data set WORK.M1X39VV1.
+NOTE: The data set WORK.M1X39VV1 has 10 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+NOTE: Run proc dmdb with the specified maxlevel criterion.
+10907  *------------------------------------------------------------* ;
+10908  * EM: DMDBClass Macro ;
+10909  *------------------------------------------------------------* ;
+10910  %macro DMDBClass;
+10911      City(ASC) Discount_Applied(ASC) Gender(ASC) Items_Purchased(ASC)
+10912     Membership_Type(ASC) Satisfaction_Level(ASC)
+10913  %mend DMDBClass;
+10914  *------------------------------------------------------------* ;
+10915  * EM: DMDBVar Macro ;
+10916  *------------------------------------------------------------* ;
+10917  %macro DMDBVar;
+10918      Age Average_Rating Days_Since_Last_Purchase Total_Spend
+10919  %mend DMDBVar;
+10920  *------------------------------------------------------------*;
+10921  * EM: Create DMDB;
+10922  *------------------------------------------------------------*;
+10923  libname _spdslib SPDE "C:\Users\ADMINI~1\AppData\Local\Temp\SAS Temporary Files\_TD29524_DESKTOP-T9TR9Q4_";
+NOTE: Libref _SPDSLIB was successfully assigned as follows:
+      Engine:        SPDE
+      Physical Name: C:\Users\ADMINI~1\AppData\Local\Temp\SAS Temporary Files\_TD29524_DESKTOP-T9TR9Q4_\
+10924  proc dmdb batch data=EMWS1.FIMPORT_train
+10925  dmdbcat=WORK.EM_DMDB
+10926  maxlevel = 101
+10927  out=_spdslib.EM_DMDB
+10928  ;
+10929  class %DMDBClass;
+10930  var %DMDBVar;
+10931  target
+10932  Age
+10933  ;
+10934  run;
+ 
+NOTE: Records processed = 350   Memory used = 511K.
+NOTE: View EMWS1.FIMPORT_TRAIN.VIEW used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+ 
+NOTE: There were 350 observations read from the data set EMWS1.FIMPORT_DATA.
+NOTE: There were 350 observations read from the data set EMWS1.FIMPORT_TRAIN.
+NOTE: The data set _SPDSLIB.EM_DMDB has 350 observations and 10 variables.
+NOTE: PROCEDURE DMDB used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.01 seconds
+ 
+ 
+10935  quit;
+ 
+NOTE: View EMWS1.FIMPORT_TRAIN.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+ 
+NOTE: There were 350 observations read from the data set EMWS1.FIMPORT_DATA.
+10936  *------------------------------------------------------------* ;
+10937  * Varsel: Input Variables Macro ;
+10938  *------------------------------------------------------------* ;
+10939  %macro INPUTS;
+10940                 AVERAGE_RATING CITY DAYS_SINCE_LAST_PURCHASE DISCOUNT_APPLIED GENDER
+10941     Items_Purchased MEMBERSHIP_TYPE SATISFACTION_LEVEL TOTAL_SPEND
+10942  %mend INPUTS;
+10943  proc dmine data=_spdslib.EM_DMDB dmdbcat=WORK.EM_DMDB
+10944  minr2=0.005 maxrows=3000 stopr2=0.0005 NOAOV16 NOINTER USEGROUPS OUTGROUP=EMWS1.Varsel_OUTGROUP outest=EMWS1.Varsel_OUTESTDMINE outeffect=EMWS1.Varsel_OUTEFFECT outrsquare =EMWS1.Varsel_OUTRSQUARE
+10945  NOMONITOR
+10946  PSHORT
+10947  ;
+10948  var %INPUTS;
+10949  target Age;
+10950  code file="C:\Users\Administrator\Desktop\NewProjectExam\Workspaces\EMWS1\Varsel\EMFLOWSCORE.sas";
+10951  code file="C:\Users\Administrator\Desktop\NewProjectExam\Workspaces\EMWS1\Varsel\EMPUBLISHSCORE.sas";
+10952  run;
+ 
+NOTE: Checking database engine with sqluse...
+NOTE: Number of threads reset to 1 because of fewer partitions.
+ 
+Initial pass to compute R2s for all targets
+350 records read
+NOTE: The full X'X matrix has 20 rows and columns.
+ 
+Building X'X  for target: Age rows=21 memory=0.00 meg.
+350 records read
+NOTE: External file C:\Users\Administrator\Desktop\NewProjectExam\Workspaces\EMWS1\Varsel\EMFLOWSCORE.sas opened.
+NOTE: External file C:\Users\Administrator\Desktop\NewProjectExam\Workspaces\EMWS1\Varsel\EMPUBLISHSCORE.sas opened.
+NOTE: There were 350 observations read from the data set _SPDSLIB.EM_DMDB.
+NOTE: The data set EMWS1.VARSEL_OUTGROUP has 25 observations and 8 variables.
+NOTE: The data set EMWS1.VARSEL_OUTESTDMINE has 9 observations and 23 variables.
+NOTE: The data set EMWS1.VARSEL_OUTEFFECT has 5 observations and 6 variables.
+NOTE: The data set EMWS1.VARSEL_OUTRSQUARE has 45 observations and 4 variables.
+NOTE: The PROCEDURE DMINE printed pages 2-5.
+NOTE: PROCEDURE DMINE used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+ 
+ 
+10953  quit;
+10954  /*      proc print data =EMWS1.Varsel_OUTEFFECT;      proc print data =EMWS1.Varsel_OUTRSQUARE;      */
+10955  run;
+ 
+10956  data EMWS1.Varsel_OUTESTDMINE;
+10957  set EMWS1.Varsel_OUTESTDMINE;
+10958  _uname_=upcase(_name_);
+10959  run;
+ 
+NOTE: There were 9 observations read from the data set EMWS1.VARSEL_OUTESTDMINE.
+NOTE: The data set EMWS1.VARSEL_OUTESTDMINE has 9 observations and 24 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+10960  proc sql;
+10961  create table _tmpoutgroup as select distinct VARIABLE from EMWS1.Varsel_OUTGROUP where VARTYPE='GROUP';
+NOTE: Table WORK._TMPOUTGROUP created, with 3 rows and 1 columns.
+ 
+10962  quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+10963  run;
+ 
+10964  data EMWS1.Varsel_OUTAOV16;
+10965  set EMWS1.Varsel_OUTGROUP;
+10966  if STRIP(VARTYPE) eq 'AOV16' then output;
+10967  DROP VARTYPE LEVEL LEVEL2 VARIABLE2;
+10968  label NAME= "Name";
+10969  label GROUP = "Group";
+10970  label VARIABLE = "Variable";
+10971  label BIN = "Bin Cutoff";
+10972  run;
+ 
+NOTE: There were 25 observations read from the data set EMWS1.VARSEL_OUTGROUP.
+NOTE: The data set EMWS1.VARSEL_OUTAOV16 has 0 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+10973  data EMWS1.Varsel_OUTGINT;
+10974  set EMWS1.Varsel_OUTGROUP;
+10975  if STRIP(VARTYPE) eq 'GINTER' then output;
+10976  DROP VARTYPE BIN;
+10977  label NAME= "Name";
+10978  label GROUP = "Group";
+10979  label VARIABLE = "Variable 1";
+10980  label VARIABLE2 = "Variable 2";
+10981  label LEVEL = "Level 1";
+10982  label LEVEL2 = "Level 2";
+10983  run;
+ 
+NOTE: There were 25 observations read from the data set EMWS1.VARSEL_OUTGROUP.
+NOTE: The data set EMWS1.VARSEL_OUTGINT has 0 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+10984  data EMWS1.Varsel_OUTGVAR;
+10985  set EMWS1.Varsel_OUTGROUP;
+10986  if STRIP(VARTYPE) eq 'GROUP' then output;
+10987  DROP VARTYPE BIN VARIABLE2 LEVEL2;
+10988  label NAME= "Name";
+10989  label GROUP = "Group";
+10990  label VARIABLE = "Variable";
+10991  label LEVEL = "Level";
+10992  run;
+ 
+NOTE: There were 25 observations read from the data set EMWS1.VARSEL_OUTGROUP.
+NOTE: The data set EMWS1.VARSEL_OUTGVAR has 25 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+10993  quit;
+ 
+10994  options nonotes nosource;
+11020  run;
+ 
+NOTE: 15 lines were written to file PRINT.
+NOTE: The DATA step printed page 6.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+ 
+ 
+11021  data EMWS1.Varsel_RESULTEDVARS;
+11022  run;
+ 
+NOTE: The data set EMWS1.VARSEL_RESULTEDVARS has 1 observations and 0 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+11023  libname _spdslib;
+NOTE: Libref _SPDSLIB has been deassigned.
+ 
+11024  *;
+11025  data EMWS1.Varsel_EMSCOREVAR;
+11026  length Name $32 formula $70 file $200;
+11027  keep NAME Formula file;
+11028  name = "G_City";
+11029  file="VARSELCODE\G_City.sas";
+11030  output;
+11031  name = "G_Items_Purchased";
+11032  file="VARSELCODE\G_Items_Purchased.sas";
+11033  output;
+11034  name = "G_Satisfaction_Level";
+11035  file="VARSELCODE\G_Satisfaction_Level.sas";
+11036  output;
+11037  run;
+ 
+NOTE: Variable formula is uninitialized.
+NOTE: The data set EMWS1.VARSEL_EMSCOREVAR has 3 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+*------------------------------------------------------------*
+* Score Log
+Date:                2024年01月07日
+Time:                16时36分09秒
+*------------------------------------------------------------*
+11139  filename emflow "C:\Users\Administrator\Desktop\NewProjectExam\Workspaces\EMWS1\Varsel\EMFLOWSCORE.sas";
+11140  *------------------------------------------------------------*;
+11141  * Varsel: Scoring DATA data;
+11142  *------------------------------------------------------------*;
+11143  data EMWS1.Varsel_TRAIN
+11144  / view=EMWS1.Varsel_TRAIN
+11145  ;
+11146  set EMWS1.FIMPORT_train
+11147  ;
+11148  %inc emflow;
+11218  run;
+ 
+NOTE: DATA STEP view saved on file EMWS1.VARSEL_TRAIN.
+NOTE: A stored DATA STEP view cannot run under a different operating system.
+NOTE: View EMWS1.FIMPORT_TRAIN.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+ 
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+ 
+ 
+11219  quit;
+11220  filename emflow;
+NOTE: Fileref EMFLOW has been deassigned.
+ 
+11221  options nosource;
+ 
+NOTE: There were 45 observations read from the data set EMWS1.VARSEL_OUTRSQUARE.
+NOTE: The data set EMWS1.VARSEL_R2DS has 42 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+ 
+NOTE: There were 42 observations read from the data set EMWS1.VARSEL_R2DS.
+NOTE: The data set EMWS1.VARSEL_R2DS has 42 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+ 
+NOTE: There were 5 observations read from the data set EMWS1.VARSEL_OUTEFFECT.
+NOTE: The data set EMWS1.VARSEL_EFFECTDS has 5 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+ 
+NOTE: There were 5 observations read from the data set EMWS1.VARSEL_EFFECTDS.
+NOTE: The data set EMWS1.VARSEL_EFFECTDS has 5 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+ 
+ 
+ 
+NOTE: View EMWS1.VARSEL_TRAIN.VIEW used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.07 seconds
+ 
+NOTE: View EMWS1.VARSEL_TRAIN.VIEW used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+ 
+11646  run;
+ 
+11647  data EMWS1.Varsel_CMETA_NONREJECTS EMWS1.Varsel_CMETA_REJECTS;
+11648  set EMWS1.Varsel_CMETA_TRAIN;
+11649  if ROLE ='REJECTED' then output EMWS1.Varsel_CMETA_REJECTS;
+11650  else output EMWS1.Varsel_CMETA_NONREJECTS;
+11651  run;
+ 
+NOTE: There were 15 observations read from the data set EMWS1.VARSEL_CMETA_TRAIN.
+NOTE: The data set EMWS1.VARSEL_CMETA_NONREJECTS has 8 observations and 20 variables.
+NOTE: The data set EMWS1.VARSEL_CMETA_REJECTS has 7 observations and 20 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+11652  data EMWS1.Varsel_CMETA_TRAIN;
+11653  set EMWS1.Varsel_CMETA_NONREJECTS;
+11654  run;
+ 
+NOTE: There were 8 observations read from the data set EMWS1.VARSEL_CMETA_NONREJECTS.
+NOTE: The data set EMWS1.VARSEL_CMETA_TRAIN has 8 observations and 20 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+11655  data WORK._tmp_meta_;
+11656  set EMWS1.Varsel_CMETA_TRAIN;
+11657  if ROLE ^= 'INPUT' then delete;
+11658  run;
+ 
+NOTE: There were 8 observations read from the data set EMWS1.VARSEL_CMETA_TRAIN.
+NOTE: The data set WORK._TMP_META_ has 5 observations and 20 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+*------------------------------------------------------------*
+* Report Log
+Date:                2024年01月07日
+Time:                16时36分09秒
+*------------------------------------------------------------*
+11682  %em_getActionStatus(emlib=EMWS1, nodeid=Varsel);
+ 
+11683  %let em_Train = Y;
+11684  %let em_Report = Y;
+11685  %let em_Score = Y;
+11686  %let em_Run = Y;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+ 

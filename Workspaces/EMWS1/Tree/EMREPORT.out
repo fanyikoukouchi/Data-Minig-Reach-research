@@ -1,0 +1,109 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+Variable Importance
+
+                                                                  Number of
+                                                                  Splitting
+Variable Name           Label                                       Rules           Importance
+
+Membership_Type         Membership Type                                1                1.0000
+G_City                  Grouped Levels for  City                       2                0.5460
+G_Items_Purchased       Grouped Levels for  Items_Purchased            3                0.2856
+Total_Spend             Total Spend                                   10                0.1620
+G_Satisfaction_Level    Grouped Levels for  Satisfaction_Level         1                0.0749
+ 
+                                                                                                                                                                                                                                                                
+ 
+Tree Leaf Report
+
+Node               Training      Training    Training
+ Id     Depth    Observations     Average    Root ASE
+
+ 17       4           50           30.14      0.84876
+ 19       4           34           26.88      0.99306
+ 20       4           26           33.65      1.35710
+ 12       3           25           41.04      0.19596
+ 21       4           25           34.96      0.19596
+ 22       4           24           43.00      0.00000
+ 29       5           24           28.00      0.00000
+ 27       5           23           32.00      0.00000
+ 34       6           22           30.82      0.57496
+ 15       3           21           36.10      0.42592
+ 30       5           19           36.95      0.22330
+ 35       6           13           31.69      0.46154
+ 23       4            9           42.11      0.31427
+ 28       5            9           29.00      0.00000
+ 11       3            8           33.00      0.00000
+ 32       5            7           38.00      0.00000
+ 33       5            6           36.83      0.89753
+ 31       5            5           36.40      0.48990
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Fit Statistics
+
+Target=Age Target Label=' '
+
+   Fit
+Statistics    Statistics Label                Train
+
+  _NOBS_      Sum of Frequencies            350.000
+  _MAX_       Maximum Absolute Error          6.654
+  _SSE_       Sum of Squared Errors         141.075
+  _ASE_       Average Squared Error           0.403
+  _RASE_      Root Average Squared Error      0.635
+  _DIV_       Divisor for ASE               350.000
+  _DFT_       Total Degrees of Freedom      350.000
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Assessment Score Rankings
+
+Data Role=TRAIN Target Variable=Age Target Label=' '
+
+           Number of       Mean        Mean
+Depth    Observations     Target    Predicted
+
+   5          24         43.0000     43.0000 
+  10          34         41.3235     41.3235 
+  20          26         37.2308     37.2308 
+  25           6         36.8333     36.8333 
+  30          26         36.1538     36.1538 
+  35          25         34.9600     34.9600 
+  45          26         33.6538     33.6538 
+  50           8         33.0000     33.0000 
+  55          23         32.0000     32.0000 
+  60          13         31.6923     31.6923 
+  65          22         30.8182     30.8182 
+  70          50         30.1400     30.1400 
+  85          33         28.2727     28.2727 
+  95          34         26.8824     26.8824 
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Assessment Score Distribution
+
+Data Role=TRAIN Target Variable=Age Target Label=' '
+
+   Range for          Mean        Mean        Number of      Model
+   Predicted         Target    Predicted    Observations     Score
+
+42.194 -  43.000    43.0000     43.0000          24         42.5971
+41.388 -  42.194    42.1111     42.1111           9         41.7912
+40.582 -  41.388    41.0400     41.0400          25         40.9853
+37.359 -  38.165    38.0000     38.0000           7         37.7618
+36.553 -  37.359    36.9200     36.9200          25         36.9559
+35.747 -  36.553    36.1538     36.1538          26         36.1500
+34.941 -  35.747    34.9600     34.9600          25         35.3441
+33.329 -  34.135    33.6538     33.6538          26         33.7324
+32.524 -  33.329    33.0000     33.0000           8         32.9265
+31.718 -  32.524    32.0000     32.0000          23         32.1206
+30.912 -  31.718    31.6923     31.6923          13         31.3147
+30.106 -  30.912    30.3472     30.3472          72         30.5088
+28.494 -  29.300    29.0000     29.0000           9         28.8971
+27.688 -  28.494    28.0000     28.0000          24         28.0912
+26.882 -  27.688    26.8824     26.8824          34         27.2853

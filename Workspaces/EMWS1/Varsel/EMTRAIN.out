@@ -1,0 +1,150 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+ Role        Level         Count
+
+INPUT      BINARY            2    
+INPUT      INTERVAL          3    
+INPUT      NOMINAL           4    
+TARGET     INTERVAL          1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The DMINE Procedure
+
+                      R-Squares for Target Variable: Age
+ 
+Effect                                       DF        R-Square
+
+Class: City*Items_Purchased                  19        0.983616                
+Group: City*Items_Purchased                   5        0.967380                
+AOV16: Total_Spend                           10        0.946629                
+Class: City*Satisfaction_Level                7        0.918781                
+Class: City*Gender                            7        0.917371                
+Class: City                                   5        0.917361                
+Class: Discount_Applied*Membership_Type       5        0.917361                
+Class: City*Membership_Type                   5        0.917361                
+Class: City*Discount_Applied                  5        0.917361                
+Class: Membership_Type*Satisfaction_Leve      6        0.909838                
+Group: Membership_Type*Satisfaction_Leve      3        0.903967                
+Group: Discount_Applied*Membership_Type       3        0.903967                
+Group: City*Gender                            3        0.903967                
+Group: City                                   3        0.903967                
+Group: City*Satisfaction_Level                3        0.903967                
+Group: City*Discount_Applied                  3        0.903967                
+Group: City*Membership_Type                   3        0.903967                
+Class: Items_Purchased*Membership_Type       16        0.893176                
+Class: Gender*Items_Purchased                15        0.892376                
+Class: Gender*Satisfaction_Level              6        0.885660                
+Group: Items_Purchased*Membership_Type        4        0.880864                
+Group: Gender*Items_Purchased                 4        0.880058                
+Group: Gender*Satisfaction_Level              3        0.874636                
+AOV16: Average_Rating                        15        0.859438                
+Class: Items_Purchased*Satisfaction_Leve     19        0.815871                
+Class: Discount_Applied*Items_Purchased      17        0.815067                
+Group: Items_Purchased*Satisfaction_Leve      5        0.803528                
+Group: Discount_Applied*Items_Purchased       5        0.803289                
+Class: Items_Purchased                       14        0.724627                
+Class: Gender*Membership_Type                 4        0.724555                
+Group: Gender*Membership_Type                 2        0.721012                
+Group: Items_Purchased                        4        0.715853                
+Class: Membership_Type                        2        0.715225                
+AOV16: Days_Since_Last_Purchase              15        0.600150                
+Var:   Average_Rating                         1        0.521685                
+Var:   Total_Spend                            1        0.459573                
+Class: Discount_Applied*Gender                3        0.374115                
+Group: Discount_Applied*Gender                2        0.373336                
+Class: Gender                                 1        0.340243                
+Class: Discount_Applied*Satisfaction_Lev      4        0.289209                
+Class: Satisfaction_Level                     3        0.284482                
+Group: Discount_Applied*Satisfaction_Lev      1        0.283923                
+Group: Satisfaction_Level                     1        0.283923                
+Var:   Days_Since_Last_Purchase               1        0.028481                
+Class: Discount_Applied                       1        0.003247    R2 < MINR2  
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The DMINE Procedure
+
+                                              Effects Chosen for Target: Age
+ 
+                                                                                                    Sum of      Error Mean
+Effect                                       DF        R-Square         F Value    p-Value         Squares          Square
+
+Group: City                                   3        0.903967     1085.646769     <.0001     7485.027651        2.298178
+Group: Items_Purchased                        4        0.062402      158.642387     <.0001      516.696784        0.814248
+Class: Membership_Type                        1        0.004524       53.004156     <.0001       37.462069        0.706776
+Group: Satisfaction_Level                     1        0.001201       14.634527     0.0002        9.945666        0.679603
+Var:   Total_Spend                            1        0.000887       11.126168     0.0009        7.342689        0.659948
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The DMINE Procedure
+
+       The Final ANOVA Table for Target: Age
+ 
+                                              Sum of
+Effect            DF        R-Square         Squares
+
+Model             10        0.972981     8056.474860
+Error            339               .      223.722283
+Total            349               .     8280.197143
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The DMINE Procedure
+
+                                    Effects Not Chosen for Target: Age
+ 
+                                                                                                    Sum of
+Effect                                       DF        R-Square         F Value    p-Value         Squares
+
+Var:   Average_Rating                         1     0.000063662        0.798271     0.3722        0.527131
+Class: Gender                                 1        0.000239        3.021076     0.0831        1.981936
+Var:   Days_Since_Last_Purchase               1     0.000083924        1.053144     0.3055        0.694911
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------
+Summary of Variable Selection from Training
+-------------------------------------------------------------------
+
+
+Target Name : Age
+Target Level : INTERVAL
+Variable Selection Model : R-Square
+
+Total number of inputs : 9
+Total number of used inputs : 9
+Total number of unused inputs : 0
+Total number of rejected inputs : 7
+
+Maximum missing percentage : 50
+NOTE: There is no rejected variable by maximum missing percentage
+
+Maximum class level : 100
+NOTE:There is no rejected variable by maximum class level
+
+NOTE: 3 group variables have been created
