@@ -20,7 +20,7 @@ This article will explore how data analysis techniques can be used to gain a dee
 **Data exploration:** Talend Data Integration
 **Data analysis：**SAS e-Miner
 # Data set source and description
-## Data set structure
+Data set structure
 | **Field** | **Data Type** |
 | --- | --- |
 | Customer ID | Integer |
